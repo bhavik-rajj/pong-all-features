@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pong — All Features</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pong — All Features</h1>
+
+    <div class="topbar">
+      <div class="scoreboard">
+        <div id="leftScore" class="score">0</div>
+        <div class="label">|</div>
+        <div id="rightScore" class="score">0</div>
+      </div>
+
+      <div class="controls-row">
+        <button id="startBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+
+        <label class="small">Difficulty
+          <select id="difficulty">
+            <option value="normal" selected>Normal</option>
+            <option value="easy">Easy</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <label class="small">Controls
+          <select id="controlMode">
+            <option value="both" selected>Mouse & Keyboard</option>
+            <option value="keyboard">Keyboard only</option>
+            <option value="mouse">Mouse only</option>
+          </select>
+        </label>
+
+        <label class="small">Rounds
+          <select id="roundsToWin">
+            <option value="1">1</option>
+            <option value="3" selected>3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="11">11</option>
+          </select>
+        </label>
+
+        <label class="small toggle">
+          <input id="soundToggle" type="checkbox" checked>
+          SFX
+        </label>
+
+        <label class="small toggle">
+          <input id="musicToggle" type="checkbox">
+          Music
+        </label>
+      </div>
+    </div>
+
+    <canvas id="game" width="900" height="520" tabindex="0"></canvas>
+
+    <div class="bottom-row">
+      <div class="hint">
+        Controls: Move mouse/touch on the canvas to move left paddle; or use W/S and Up/Down arrows. Space toggles Start/Pause. Hard AI predicts ball path.
+      </div>
+
+      <div class="highscores">
+        <div class="hs-header">High Scores</div>
+        <ol id="highScoreList"></ol>
+        <div class="hs-clear"><button id="clearScoresBtn">Clear Scores</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h2 id="overlayTitle">You win!</h2>
+      <p id="overlayText"></p>
+      <div class="overlay-actions">
+        <button id="playAgainBtn">Play Again</button>
+        <button id="closeOverlayBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
